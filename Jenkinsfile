@@ -21,4 +21,5 @@ pipeline {
 			  sh 'npm install && npm start'
 			}
 		}
+  }
 }
