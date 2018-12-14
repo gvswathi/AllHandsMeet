@@ -18,7 +18,7 @@ pipeline {
 		    }
 			steps {
 				echo 'Building..'
-			  sh 'npm install && npm start'
+			        echo 'yay!!!'
 			}
 		}
   }
