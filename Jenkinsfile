@@ -4,7 +4,7 @@ pipeline {
     stages {
 		stage ('Checkout') {
 			agent {
-				label any
+				label mastrer
 		    }
 			steps {
 				echo 'This is a minimal pipeline for HCP Vacancies'
