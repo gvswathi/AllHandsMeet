@@ -1,25 +1,30 @@
 pipeline {
-    agent none
+    agent {
+        node {
+            label any
+        }
+  }
+
     options { skipDefaultCheckout() }
     stages {
-		stage ('Checkout') {
-			agent {
-				label any
-		    }
-			steps {
-				echo 'This is a minimal pipeline for HCP Vacancies'
-				echo 'Checking out SCM'
-				checkout scm
-			}
-		}
-		stage('Build') {
-			agent {
-				label any
-		    }
-			steps {
-				echo 'Building..'
-			        echo 'yay!!!'
-			}
-		}
-  }
+        stage ('Build Stage') {
+            agent none
+            steps {
+                script {
+                    stage ('Checkout') {
+                        echo 'This is a minimal pipeline for PayGo'
+                        echo 'Checking out SCM'
+                        checkout scm
+
+                    }
+			
+                   stage ('build') {
+                        echo 'this is the build stage'
+                        echo 'YAY!!'
+		   }
+            }
+        }
+
+    }
+
 }
